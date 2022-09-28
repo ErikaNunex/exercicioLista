@@ -34,11 +34,11 @@ function addTarefa() {
         return;
     }
 
-    let titulos = buscar().map((tarefa) => {
+    let titulos = buscar().map((tarefa) => {  //transformando array e criando outro só de string
         return tarefa ? tarefa.titulo : "";
     });
 
-    let existe = false;
+    let existe = false;                     // tarefa existe?
     titulos.forEach((t) => {
         if (true === t.includes(titulo)) {
             existe = true;
@@ -46,10 +46,10 @@ function addTarefa() {
         }
     });
     
-    if(existe == false){
+    if(existe == false){                      //se não existir pode salvar
         salvar(titulo, input_prioridade.value);
     }else{
-        alert('Tarefa já existe');
+        alert('Tarefa já existe');         // se existir, avisar ao usuário 
     }
 
     document.getElementById('input_nova_tarefa').value = '';
